@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func HomePage(w http.ResponseWriter, r *http.Request) {
+func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	//	fmt.Fprint(w, "Hello World")
 	t, err := template.ParseFiles("templates/index.html", "templates/header.html")
 	if err != nil {
