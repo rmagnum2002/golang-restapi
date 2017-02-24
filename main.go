@@ -18,7 +18,7 @@ func main() {
 
 	router := mux.NewRouter()
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
-	router.HandleFunc("/", handlers.HomePage)
+	router.HandleFunc("/", handlers.IndexHandler)
 	router.HandleFunc("/api/books", handlers.GetBooksEndpoint).Methods("GET")
 	router.HandleFunc("/api/books/{id}", handlers.GetBookEndpoint).Methods("GET")
 	router.HandleFunc("/api/books", handlers.CreateBookEndpoint).Methods("POST")
